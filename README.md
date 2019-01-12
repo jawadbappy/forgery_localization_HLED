@@ -1,50 +1,36 @@
 
-## Repo for Multi-pose Image Generation
-The work presents a GAN based deep generative model in order to transfer a person's current pose to a new pose. 
+## Localization of Image Forgeries
+This projects presents a high-confidence  manipulation localization architecture which utilizes resampling features, Long-Short Term Memory (LSTM) cells, and encoder-decoder network to segment out manipulated regions from non-manipulated ones. 
 
 ### Data
-The code utilizes DeepFashion dataeset. Please use the following link to download the DeepFashion images. 
+We create a large dataset by splicing different object obtained from MS-COCO dataset into images of DRESDEN benchmark. The data can be found on following link.
 ```
-http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html
-```
-We also demonstrated rigorous experimentation on Market-1501 dataset. The test data (DeepFashion and Market-1501) have also been 
-uploaded to the data server (10.252.194.1). Please check "multipose_data" folder in 10.252.194.1 server. The performance of model
-has been evaluated in terms of Structural Similarity (SSIM) and Inception Score (IS). 
 
-### Pose Estimation
-In this work, pose keypoints have been estimated using the following method. 
 ```
-https://github.com/last-one/Pytorch_Realtime_Multi-Person_Pose_Estimation
-```
+We also finetune with NIST'16 dataset and IEEE Forensics Challenge dataset. 
+
 
 ### Model
-Model can be found in "multipose_data" folder in 10.252.194.1 server.
+Model can be found in "./model" folder. Two models are provided- (1) finetuned with NIST'16 data, and (2) finetuned with IEEE Forensics Challenge data. Please note that the finetune is performed on base model which is trained on synthesized data.
 
 ### Train
-First, the config file needs to be modified to train the network.  
+First, the data needs to be prepared either hdft format or any other formats. The codes need to be modified accordingly. In order to train the model, an image and a corresponding binary mask is required.   
 
 ```
-python train_multipose_generator.py --config /config file/ --output_path /out path/
+python train.py
 ```
-The model will be stored in the output path. 
+The model will be stored in the model path. 
 
 ### Test
-To test the image generation results, please use the following format. 
+To evaluate the model, we provide 8 images which will be found on test_data folder. Please use the following command to run the code. 
 ```
-python pose_generation_test.py --config ./configs/config file --image_path 
-/image path/  --out_path /results/ --model_path /model path/
+python test.py
 
 ```
+The code will automatically generate binary mask and heat map for the prediction score.
 
-### Score Generation
-Following command is for the computation of SSIM and IS score. 
-
-```
-python score.py /model path/ /results/ dataset
-```
-Plese use 'df' or 'mk' to denote the DeepFashion or Market dataset. 
-After running the above command, a file "ssim_is_score.txt" will be generated that includes the SSIM and IS score.
-The results are provided in "ssim_is_score_df.txt" and "ssim_is_score_market.txt" for the DeepFashion or the Market 
-datasets respectively. 
+### Citations
+Please cite the following paper. 
+Jawadul H. Bappy, Cody Simons, Lakshmanan Natara, B.S. Manjunath, and Amit Roy-Chowdhury, "Hybrid LSTM and Encoder-Decoder Architecture for Detection of Image Forgeries", IEEE Transactions on Image Processing, 2019.
 
 
