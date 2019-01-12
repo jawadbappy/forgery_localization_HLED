@@ -1,4 +1,4 @@
-# Image Forgery Localization
+
 ## Repo for Multi-pose Image Generation
 The work presents a GAN based deep generative model in order to transfer a person's current pose to a new pose. 
 
