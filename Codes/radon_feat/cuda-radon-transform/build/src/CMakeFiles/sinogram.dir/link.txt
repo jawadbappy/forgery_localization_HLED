@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../libsinogram.a  CMakeFiles/sinogram.dir/sinogram_generated_sinogram.cu.o CMakeFiles/sinogram.dir/sinogram_generated_convolutionTexture.cu.o
+/usr/bin/ranlib ../libsinogram.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../libutilslib.a  CMakeFiles/utilslib.dir/ocvutils.cpp.o
+/usr/bin/ranlib ../libutilslib.a

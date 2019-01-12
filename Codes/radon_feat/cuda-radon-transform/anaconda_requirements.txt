@@ -1,0 +1,5 @@
+conda install libgcc
+conda install -c conda-forge cmake=3.7.1
+conda install -c meznom boost-python=1.55.0
+
+conda install -c conda-forge pyfftw=0.10.4

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../libpyutilslib.a  CMakeFiles/pyutilslib.dir/PythonCVMatConvert.cpp.o
+/usr/bin/ranlib ../libpyutilslib.a

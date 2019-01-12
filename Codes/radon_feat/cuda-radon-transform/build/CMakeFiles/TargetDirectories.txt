@@ -1,0 +1,6 @@
+/home/cody/MediFor/cuda-radon-transform/build/src/CMakeFiles/pysinogram.dir
+/home/cody/MediFor/cuda-radon-transform/build/src/CMakeFiles/pymyonlineaffinecpplib.dir
+/home/cody/MediFor/cuda-radon-transform/build/src/CMakeFiles/sinogram_main.dir
+/home/cody/MediFor/cuda-radon-transform/build/src/CMakeFiles/pyutilslib.dir
+/home/cody/MediFor/cuda-radon-transform/build/src/CMakeFiles/utilslib.dir
+/home/cody/MediFor/cuda-radon-transform/build/src/CMakeFiles/sinogram.dir
