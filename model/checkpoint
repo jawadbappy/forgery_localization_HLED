@@ -1,0 +1,2 @@
+model_checkpoint_path: "nc16_EnDeode_v5_best_prec_1.ckpt"
+all_model_checkpoint_paths: "nc16_EnDeode_v5_best_prec_1.ckpt"
