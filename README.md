@@ -25,7 +25,6 @@ The model will be stored in the model path.
 To evaluate the model, we provide 8 images which will be found on test_data folder. Please use the following command to run the code. 
 ```
 python test.py
-
 ```
 The code will automatically generate binary mask and heat map for the prediction score.
 
