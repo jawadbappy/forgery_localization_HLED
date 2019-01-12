@@ -29,6 +29,9 @@ python test.py
 ```
 The code will automatically generate binary mask and heat map for the prediction score.
 
+### Sample Outputs
+
+
 ### Citations
 Please cite the following paper. 
 ```
