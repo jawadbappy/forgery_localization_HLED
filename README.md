@@ -27,7 +27,7 @@ To evaluate the model, we provide 8 images which will be found on test_data fold
 python test.py
 ```
 The code will automatically generate binary mask and heat map for the prediction score.
-
+![Screenshot](output.png)
 
 ### Citations
 Please cite the following paper. 
