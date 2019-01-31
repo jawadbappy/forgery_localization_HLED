@@ -13,8 +13,18 @@ We also finetune with NIST'16 dataset and IEEE Forensics Challenge dataset.
 ### Model
 Model can be found in "./model" folder. Two models are provided- (1) finetuned with NIST'16 data, and (2) finetuned with IEEE Forensics Challenge data. Please note that the finetune is performed on base model which is trained on synthesized data.
 
+### Resampling Features 
+The codes for extracting resampling features can be found on Radon folder. Please change the input and output directory for your own use. Following is the command to extract the resampling features.
+```
+python extract_resamp_feat.py
+```
+In this code, the images are stored in hdf5 format. Please note that the package "pyfftw" needs to be installed before running the script. Please use the following command to install the package.  
+```
+sudo pip install pyfftw
+```
+
 ### Train
-First, the data needs to be prepared either hdft format or any other formats. The codes need to be modified accordingly. In order to train the model, an image and a corresponding binary mask is required.   
+First, the data needs to be prepared either hdf5 format or any other formats. The codes need to be modified accordingly. In order to train the model, an image and a corresponding binary mask is required.   
 
 ```
 python train.py
