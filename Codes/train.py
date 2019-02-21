@@ -12,7 +12,7 @@ import math
 import h5py
 from compute_mcc import compute_mcc,metrics,_fast_hist,label_accuracy_score
 from hilbert import hilbertCurve
-from compute_IoU import compute_precision,bb_IoU
+#from compute_IoU import compute_precision,bb_IoU
 
 #tf.reset_default_graph()
 os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
