@@ -44,15 +44,15 @@ def label_accuracy_score(label_trues, label_preds, n_class):
     """
     hist = np.zeros((n_class, n_class))
     for lt, lp in zip(label_trues, label_preds):
-    hist += _fast_hist(lt.flatten(), lp.flatten(), n_class)
+        hist += _fast_hist(lt.flatten(), lp.flatten(), n_class)
     acc = np.diag(hist).sum() / hist.sum()
     acc_cls = np.diag(hist) / hist.sum(axis=1)
     acc_cls = np.nanmean(acc_cls)
     iu = np.diag(hist) / (hist.sum(axis=1) + hist.sum(axis=0) - np.diag(hist))
     mean_iu = np.nanmean(iu)
-    freq = hist.sum(axis=1) / hist.sum()
+    #freq = hist.sum(axis=1) / hist.sum()
 
-    return acc, acc_cls, mean_iu, fwavacc
+    return acc, acc_cls, mean_iu
 
 
 a,b,c,d=compute_mcc([1,1,0,1,0,1,0],[1,0,1,0,1,0,1])
