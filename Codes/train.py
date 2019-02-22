@@ -259,7 +259,7 @@ config.gpu_options.allow_growth=True
 
 with tf.Session(config=config) as sess:
     sess.run(init) 
-    saver.restore(sess,'../model/nc16_EnDeode_5_best_Miu.ckpt')
+    saver.restore(sess,'../model/final_model_nist.ckpt')
     print 'session starting .................!!!!' 
 
     # loading data
@@ -522,7 +522,7 @@ with tf.Session(config=config) as sess:
 
             if Miu>best_acc :
                 best_acc=Miu
-                save_path=saver.save(sess,'../model/best_models/nc16_EnDeode_5_best_Miu.ckpt')
+                save_path=saver.save(sess,'../model/final_model_nist.ckpt')
                 print "Best Model Found for MiU on NC16..."
             
             print "best_mIU="+str(best_acc)+ ", prec= "+str(tP)+"("+str(best_prec)+")" + ", acc= "+str(test_accuracy)
@@ -530,7 +530,7 @@ with tf.Session(config=config) as sess:
         step += 1
 
         if step % 500 ==0: 
-            save_path=saver.save(sess,'../model/tamperLocalization_EnDeode_v5.ckpt')
+            save_path=saver.save(sess,'../model/final_model_nist.ckpt')
             print 'model saved ..........#epoch->'+str(epoch_iter)
     print "Optimization Finished!"
 
