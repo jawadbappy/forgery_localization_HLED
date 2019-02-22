@@ -1,7 +1,7 @@
 import numpy as np
 import math
 
-def compute_mcc(y_actual, y_hat):
+def compute_pos_neg(y_actual, y_hat):
     TP = 0; FP = 0;TN = 0; FN = 0
 
     for i in range(len(y_hat)): 
@@ -22,11 +22,11 @@ def metrics(TP,FP,TN,FN):
     b=TP+FN
     c=TN+FP
     d=TN+FN
-    mcc=((TP*TN)-(FP*FN))/(math.sqrt(float(a*b*c*d)+0.0001))
-    F1=(2*TP)/float(2*TP+FP+FN+.0000001)
+    #mcc=((TP*TN)-(FP*FN))/(math.sqrt(float(a*b*c*d)+0.0001))
+    #F1=(2*TP)/float(2*TP+FP+FN+.0000001)
     precision=TP/float(TP+FP+.0000001)
-    recall=TP/float(TP+FN+.0000001)
-    return mcc,F1,precision,recall
+    #recall=TP/float(TP+FN+.0000001)
+    return precision
 
 def _fast_hist(label_true, label_pred, n_class):
     mask = (label_true >= 0) & (label_true < n_class)
@@ -55,7 +55,7 @@ def label_accuracy_score(label_trues, label_preds, n_class):
     return acc, acc_cls, mean_iu
 
 
-a,b,c,d=compute_mcc([1,1,0,1,0,1,0],[1,0,1,0,1,0,1])
+a,b,c,d=compute_pos_neg([1,1,0,1,0,1,0],[1,0,1,0,1,0,1])
 
 
 
