@@ -5,12 +5,12 @@ from tensorflow.python.client import device_lib
 from tensorflow.contrib import rnn
 import numpy as np
 import tensorflow.contrib.slim as slim
-from compute_mcc import compute_mcc
+from compute_mcc import *
 #import scipy.io as sio
 import os
 import math
 import h5py
-from compute_mcc import compute_mcc,metrics,_fast_hist,label_accuracy_score
+#from compute_mcc import compute_mcc,metrics,_fast_hist,label_accuracy_score
 from hilbert import hilbertCurve
 #from compute_IoU import compute_precision,bb_IoU
 
@@ -479,9 +479,9 @@ with tf.Session(config=config) as sess:
             # Calculate batch loss
             #cost = sess.run(, feed_dict={input_layer: dx, y: dy}) 
             
-            a,b,c,d=compute_mcc(y1,p1)
+            a,b,c,d=compute_pos_neg(y1,p1)
             TP+=a; FP+=b;TN+=c; FN+=d
-            _,_,prec,_=metrics(TP,FP,TN,FN)
+            prec=metrics(TP,FP,TN,FN)
             
             print "Iter " + str(step*batch_size) + ", Loss= " + str(cost) +  \
               ", epoch= " + str(epoch_iter)+ \
@@ -493,16 +493,7 @@ with tf.Session(config=config) as sess:
             #TP1=0;FP1=0
             num_images=batch_size
             n_chunks=np.shape(tx)[0]/batch_size
-            tAcc=np.zeros(n_chunks)    
-            #tLoss=np.zeros(n_chunks)
-            tMcc=np.zeros(n_chunks)
-            tF1=np.zeros(n_chunks)
-            tPrec=np.zeros(n_chunks)
-
-            acc=np.zeros(n_chunks)
-            acc_cls=np.zeros(n_chunks)
-            mean_iu=np.zeros(n_chunks)
-            fwavcc=np.zeros(n_chunks)
+            tAcc=np.zeros(n_chunks)
 
             for chunk in range(0,n_chunks):               
                 tx_batch=tx[((chunk)*num_images):((chunk+1)*num_images),...]
@@ -510,22 +501,19 @@ with tf.Session(config=config) as sess:
                 tx1_batch=freq4[((chunk)*num_images):((chunk+1)*num_images),...]
                 ty_batch=conv_mask_gt(ty_batch)
                 tAcc[chunk],y2,p2=sess.run([accuracy,y_actual,y_pred], feed_dict={input_layer: tx_batch, y:ty_batch, freqFeat: tx1_batch})
-            a,b,c,d=compute_mcc(y2,p2)
+            a,b,c,d=compute_pos_neg(y2,p2)
 
             TP+=a; FP+=b;TN+=c; FN+=d
             
-            _,_,tP,tR=metrics(TP,FP,TN,FN)            
+            prec=metrics(TP,FP,TN,FN)            
             test_accuracy=np.mean(tAcc)
            
-            Miu = np.mean(mean_iu)
-            
-
-            if Miu>best_acc :
-                best_acc=Miu
+            if prec > best_acc :
+                best_prec = prec
                 save_path=saver.save(sess,'../model/final_model_nist.ckpt')
-                print "Best Model Found for MiU on NC16..."
+                print "Best Model Found on NC16..."
             
-            print "best_mIU="+str(best_acc)+ ", prec= "+str(tP)+"("+str(best_prec)+")" + ", acc= "+str(test_accuracy)
+            print  "prec = "+str(prec)+"("+str(best_prec)+")" + ", acc = "+ str(test_accuracy)
             
         step += 1
 
