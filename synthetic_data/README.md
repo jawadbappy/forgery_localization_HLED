@@ -10,3 +10,12 @@ copymove_nist.zip - ~27K, Pristine images from the MFC18, with a single object f
 dresden_spliced_mscoco.zip - ~71K, Pristine images cropped from the Dresden Dataset, spliced with objects fromthe MS_COCO dataset
 
 Each zip files contains files of the format [0-9]_mask.png and [0-9]_rgb.png. The rgb image is the spliced image and the mask file with the same number is the corresponding ground truth mask
+
+## Creating More Data
+Additional synthetic images can be created using the python files.
+
+-splice_masks_copymove.py
+ $python splice_masks_copymove {folder-with-pristine}  {output-folder}
+
+-splice_masks_onto_pristine_images_2.py
+ $python splice_masks_onto_pristine_images_2.py {folder-with-pristine}  {output-folder}
