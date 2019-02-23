@@ -3,11 +3,7 @@
 This projects presents a high-confidence  manipulation localization architecture which utilizes resampling features, Long-Short Term Memory (LSTM) cells, and encoder-decoder network to segment out manipulated regions from non-manipulated ones. 
 
 ### Data
-We create a large dataset by splicing different object obtained from MS-COCO dataset into images of DRESDEN benchmark. The data can be found on following link.
-```
-
-```
-We also finetune with NIST'16 dataset and IEEE Forensics Challenge dataset. 
+We create a large dataset by splicing different object obtained from MS-COCO dataset into images of DRESDEN benchmark. Please check "synthetic_data" folder for more details.
 
 
 ### Model
