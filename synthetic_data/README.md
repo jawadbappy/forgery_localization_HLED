@@ -9,4 +9,4 @@ spliced_nist.zip - ~27K, Pristine images from the MFC18, spliced with a single o
 copymove_nist.zip - ~27K, Pristine images from the MFC18, with a single object from MS_COCO spliced onto it multiple times
 dresden_spliced_mscoco.zip - ~71K, Pristine images cropped from the Dresden Dataset, spliced with objects fromthe MS_COCO dataset
 
-Each zip files contains files of the format ###_mask.png and ###_rgb.png. The rgb image is the spliced image and the mask file with the same number is the corresponding ground truth mask
+Each zip files contains files of the format [0-9]_mask.png and [0-9]_rgb.png. The rgb image is the spliced image and the mask file with the same number is the corresponding ground truth mask
