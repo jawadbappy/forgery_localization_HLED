@@ -13,10 +13,6 @@ Model can be found in "./model" folder. Please note that the given model is obta
 
 
 ### Resampling Features 
-The code for extracting resampling features can be found in the Radon folder. Please change the input and output directory for your own use. Following is the command to extract the resampling features.
-
-
-### Resampling Features 
 The codes for extracting resampling features can be found on "Radon" folder. Please change the input and output directory for your own dataset. Following is the command to extract the resampling features.
 
 ```
