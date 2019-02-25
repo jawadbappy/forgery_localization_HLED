@@ -1,10 +1,8 @@
 
 ## Localization of Image Forgeries
-<<<<<<< HEAD
-This project presents a high-confidence  manipulation localization architecture which utilizes resampling features, Long-Short Term Memory (LSTM) cells, and encoder-decoder network to segment out manipulated regions from non-manipulated ones. 
-=======
+
 This project presents a framework to localize the image manipulation from an image. The network employs resampling features, Long-Short Term Memory (LSTM) cells, and encoder-decoder network in order to segment out manipulated regions from an image. 
->>>>>>> 595755f02ddbd036e5c07f64205b7fcafb0523d2
+
 
 ### Data
 We create a large dataset by splicing different objects obtained from MS-COCO dataset into the images of DRESDEN benchmark. Please check "synthetic_data" folder for more details.
@@ -32,11 +30,9 @@ sudo pip install pyfftw
 ```
 
 ### Train
-<<<<<<< HEAD
-First, the data needs to be prepared either hdf5 format or any other formats. The code need to be modified accordingly. In order to train the model, an image and a corresponding binary mask is required.   
-=======
+
 First, the data needs to be prepared either hdf5 format or any other formats. The training code needs to be modified accordingly. In order to train the model, an image and a corresponding binary mask is required.   
->>>>>>> 595755f02ddbd036e5c07f64205b7fcafb0523d2
+
 
 ```
 python train.py
