@@ -9,18 +9,16 @@ We create a large dataset by splicing different objects obtained from MS-COCO da
 
 
 ### Model
-<<<<<<< HEAD
-Model can be found in "./model" folder. Two models are provided- (1) finetuned with NIST'16 data, and (2) finetuned with IEEE Forensics Challenge data. Please note that the finetuning is performed on the base model which is trained on synthesized data.
-
-### Resampling Features 
-The code for extracting resampling features can be found in the Radon folder. Please change the input and output directory for your own use. Following is the command to extract the resampling features.
-=======
 Model can be found in "./model" folder. Please note that the given model is obtained by finetuning the base model with NIST data. The base model is trained on synthesized data.
 
 
 ### Resampling Features 
+The code for extracting resampling features can be found in the Radon folder. Please change the input and output directory for your own use. Following is the command to extract the resampling features.
+
+
+### Resampling Features 
 The codes for extracting resampling features can be found on "Radon" folder. Please change the input and output directory for your own dataset. Following is the command to extract the resampling features.
->>>>>>> 595755f02ddbd036e5c07f64205b7fcafb0523d2
+
 ```
 python extract_resamp_feat.py
 ```
@@ -32,7 +30,6 @@ sudo pip install pyfftw
 ### Train
 
 First, the data needs to be prepared either hdf5 format or any other formats. The training code needs to be modified accordingly. In order to train the model, an image and a corresponding binary mask is required.   
-
 
 ```
 python train.py
