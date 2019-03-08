@@ -46,8 +46,12 @@ The code will automatically generate the binary mask and the heat map of predict
 ### Citations
 Please cite the following paper for reference. 
 ```
-Jawadul H. Bappy, Cody Simons, Lakshmanan Nataraj, B.S. Manjunath, and Amit Roy-Chowdhury, 
-"Hybrid LSTM and Encoder-Decoder Architecture for Detection of Image Forgeries", 
-IEEE Transactions on Image Processing, 2019.
+@article{bappy2019hybrid,
+  title={Hybrid LSTM and Encoder-Decoder Architecture for Detection of Image Forgeries},
+  author={Bappy, Jawadul H and Simons, Cody and Nataraj, Lakshmanan and Manjunath, BS and Roy-Chowdhury, Amit K},
+  journal={IEEE Transactions on Image Processing},
+  year={2019},
+  publisher={IEEE}
+}
 ```
 
