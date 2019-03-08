@@ -20,7 +20,7 @@ Additional synthetic images can be created using the python files.
 -splice_masks_onto_pristine_images_2.py
  $python splice_masks_onto_pristine_images_2.py {folder-with-pristine}  {output-folder}
 
-### Citations
+### Citation
 Please cite the following paper if you use the data or the codes. 
 ```
 @article{bappy2019hybrid,
