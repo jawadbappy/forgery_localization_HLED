@@ -19,3 +19,15 @@ Additional synthetic images can be created using the python files.
 
 -splice_masks_onto_pristine_images_2.py
  $python splice_masks_onto_pristine_images_2.py {folder-with-pristine}  {output-folder}
+
+### Citations
+Please cite the following paper if you use the data or the codes. 
+```
+@article{bappy2019hybrid,
+  title={Hybrid LSTM and Encoder-Decoder Architecture for Detection of Image Forgeries},
+  author={Bappy, Jawadul H and Simons, Cody and Nataraj, Lakshmanan and Manjunath, BS and Roy-Chowdhury, Amit K},
+  journal={IEEE Transactions on Image Processing},
+  year={2019},
+  publisher={IEEE}
+}
+```
