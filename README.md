@@ -43,7 +43,7 @@ The code will automatically generate the binary mask and the heat map of predict
 ![Screenshot](output.png)
 ![Screenshot](output1.png)
 
-### Citations
+### Citation
 Please cite the following paper for reference. 
 ```
 @article{bappy2019hybrid,
