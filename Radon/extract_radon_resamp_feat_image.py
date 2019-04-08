@@ -1,5 +1,5 @@
 """
-Author: Jason Bunk
+Author: Jason Bunk, modified by @Jawad Bappy
 
 Test CUDA radon transform by comparing the output to skimage.transform.radon()
 which does the same thing.
