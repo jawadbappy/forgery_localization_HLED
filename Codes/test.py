@@ -173,7 +173,7 @@ with tf.device('/gpu:1'):
         # Split to get a list of 'n_steps' tensors of shape (batch_size, n_input)
         xCell=tf.unstack(patches, n_steps, 1)
         # 2 stacked layers
-        stacked_lstm_cell = tf.contrib.rnn.MultiRNNCell([tf.contrib.rnn.DropoutWrapper(rnn.BasicLSTMCell(n_hidden),output_keep_prob=0.9) for _ in range(2)] )
+        stacked_lstm_cell = tf.contrib.rnn.MultiRNNCell([tf.contrib.rnn.DropoutWrapper(rnn.BasicLSTMCell(n_hidden),output_keep_prob=1.0) for _ in range(2)] )
         out, state = rnn.static_rnn(stacked_lstm_cell, xCell, dtype=tf.float32)
         # organizing the lstm output
         out=tf.gather(out,actual_ind)
